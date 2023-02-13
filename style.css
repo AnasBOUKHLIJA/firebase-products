@@ -27,7 +27,7 @@ body{
     border: none !important;
     box-shadow: rgba(255, 255, 255, 0.777) 0px 1px 4px;
 }
-.card a{
+.card button{
     background-color: #343a40 !important;
     border: none;
 }
