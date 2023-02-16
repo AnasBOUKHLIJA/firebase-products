@@ -1,10 +1,9 @@
 *{
     margin: 0;
     padding: 0;
-    
 }
 body{
-    background-color: #343a40;
+    background-color: #adb5bd;
     overflow-x: hidden;
 }
 .containerbody{
@@ -33,4 +32,34 @@ body{
 }
 .card-img-top{
     height: 75% !important;
+}
+
+.auth-body{
+    width: 95%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 2.5%;
+}
+.auth-body-side-1,.auth-body-side-2{
+    width: 48%;
+    background-color: #6c757d;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+.auth-body-side-1 h2,.auth-body-side-2 h2{
+    width: 100%;
+    text-align: center;
+    background-color: #212529;
+    color: #fff;
+    padding: 8px;
+}
+
+.auth-body-side-1 form{
+    box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;
+    background-color: #c0c0c0;
+    width: 90%;
+    height: auto;
+    margin: 5%;
+    padding: 5%;
 }
