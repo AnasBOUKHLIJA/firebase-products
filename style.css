@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body{
     background-color: #adb5bd;
@@ -39,15 +40,16 @@ body{
     display: flex;
     justify-content: space-evenly;
     margin: 2.5%;
+    flex-wrap: wrap;
 }
-.auth-body-side-1,.auth-body-side-2{
+.auth-body-side-1,.auth-body-side-2,.auth-body-side-3{
     width: 48%;
     background-color: #6c757d;
     border-radius: 5px;
     overflow: hidden;
     position: relative;
 }
-.auth-body-side-1 h2,.auth-body-side-2 h2{
+.auth-body-side-1 h2,.auth-body-side-2 h2,.auth-body-side-3 h2{
     width: 100%;
     text-align: center;
     background-color: #212529;
@@ -62,4 +64,60 @@ body{
     height: auto;
     margin: 5%;
     padding: 5%;
+}
+.auth-body-side-2 .info{
+    padding: 30px;
+    margin-top: 20px;
+    text-align: center;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.auth-body-side-2 img{
+    width: 200px !important;
+    height: 200px !important;
+    border-radius: 50%;
+    margin: 5px;
+}
+.auth-body-side-2 #StorageFile{
+    max-width: 90% !important;
+    max-height: 400px !important;
+    width: auto !important;
+    height: auto !important;
+    border-radius: 0;
+}
+.auth-body-side-2 .info textarea{
+    min-height: 150px;
+}
+
+.auth-body-side-3{
+    margin-top: 40px;
+    width: 98%;
+    position: relative;
+}
+
+.functions{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+.functions .function{
+    width: 90%;
+    overflow: hidden;
+    margin: 15px 1%;
+    border-radius: 15px;
+    background-color: #b6c6d4;
+
+}
+.function .function-title{
+    background-color: #353a3f;
+    margin: 0;
+    padding: 15px;
+    text-transform: capitalize;
+    color: #fff;
+}
+.function .function-body{
+    
 }

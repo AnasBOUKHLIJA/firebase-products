@@ -1,10 +1,11 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
     import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
-    import {  getAuth, signInWithPopup, GoogleAuthProvider } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js'
+    import {  getAuth, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js'
 
     const firebaseConfig = {
         apiKey: "AIzaSyBKFm3EYU3Hej9KniNnu4fxVBDdC0ve2u4",
         authDomain: "fir-services-4a701.firebaseapp.com",
+        databaseURL: "https://fir-services-4a701-default-rtdb.europe-west1.firebasedatabase.app",
         projectId: "fir-services-4a701",
         storageBucket: "fir-services-4a701.appspot.com",
         messagingSenderId: "948264685987",
@@ -16,41 +17,84 @@
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
     const auth = getAuth(app);
-  
-    const username = document.querySelector("form #username");
-    const password = document.querySelector("form #password");
-    document.querySelector("#connexion").addEventListener('click',(e)=>{
-        e.preventDefault();
-        console.log(username.value);
-    });
 
-    document.querySelector("#connexion-Google").addEventListener('click',(e)=>{
-        e.preventDefault();
-        const auth = getAuth();
-        const provider = new GoogleAuthProvider();
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    // IdP data available using getAdditionalUserInfo(result)
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
+    function getUsernameAndPassword () {
+      const username = document.querySelector("form #username").value;
+      const password = document.querySelector("form #password").value;
+      return {username,password};
+    }
+
+    function displayUserCredential(img,uid,username,data){
+      document.querySelector(".auth-body-side-2 .info #userPhoto").setAttribute("src", img);
+      document.querySelector(".auth-body-side-2 .info #userUid").value = uid ;
+      document.querySelector(".auth-body-side-2 .info #UserUsername").value = username ;
+      document.querySelector(".auth-body-side-2 .info #UserDetails").innerHTML = JSON.stringify(data)  ;
+    }
+    
+    document.querySelector("#enregistrer").addEventListener('click',(e)=>{
+      e.preventDefault();
+      const {username,password} = getUsernameAndPassword();
+      createUserWithEmailAndPassword(auth, username, password)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        displayUserCredential(user.photoURL,user.uid,user.email,userCredential);
+        console.log(userCredential);
+      })
+      .catch((error) => {
+        alert(error);
+      });
+
   });
 
+  document.querySelector("#connexion").addEventListener('click',(e)=>{
+        e.preventDefault();
+        const {username,password} = getUsernameAndPassword();
+        //console.log(`Username = ${username} and Password = ${password}`);
+        signInWithEmailAndPassword(auth, username, password)
+        .then((userCredential) => {
+          const user = userCredential.user;
+          displayUserCredential(user.photoURL,user.uid,user.email,userCredential);
+          console.log(userCredential);
+        })
+        .catch((error) => {
+          alert(error);
+        });
+    });
+
+    document.querySelector("#reinitialisation").addEventListener('click',(e)=>{
+      e.preventDefault();
+      const {username,password} = getUsernameAndPassword();
+      sendPasswordResetEmail(auth, username)
+      .then(() => {
+        alert("Password reset email sent!");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  });
+    document.querySelector("#connexion-Google").addEventListener('click',(e)=>{
+        e.preventDefault();
+        const provider = new GoogleAuthProvider();
+        signInWithPopup(auth, provider)
+        .then((result) => {
+          const user = result.user;
+          displayUserCredential(user.photoURL,user.uid,user.email,result);
+          console.log(user)
+        }).catch((error) => {
+          alert(error);
+        });
     });
 
     document.querySelector("#connexion-Facebook").addEventListener('click',(e)=>{
         e.preventDefault();
-
+        const provider = new FacebookAuthProvider();
+        signInWithPopup(auth,provider).then((result) => {
+          // The signed-in user info.
+          const user = result.user;
+          console.log(user)
+        }).catch((error) => {
+          alert(error);
+        });
     });
+
+
