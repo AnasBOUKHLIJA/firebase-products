@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting</title>
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/themes/prism-solarizeddark.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="VSCodeTheme.css">
+</head>
+<body>
+    <div class="auth-body">
+        <div class="auth-body-side-3">
+            <h2>Example Firebase Hébergement (.web.app)</h2>
+            <div class="hosting-item">
+                <a href="https://fir-services-4a701.web.app/">https://fir-services-4a701.web.app/</a>
+                <iframe src="https://fir-services-4a701.web.app/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="hosting-item">
+                <a href="https://portfolio-4a247.web.app/">https://portfolio-4a247.web.app/</a>
+                <iframe src="https://portfolio-4a247.web.app/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="auth-body-side-3">
+            <h2>Firebase Hébergement</h2>
+            <div class="functions">
+                <div class="function">
+                    <h3 class="function-title">initialisation d'application et Hébergement</h3>
+    <pre><code class="language-javascript">
+        Anas@DESKTOP-1SMVT9O MINGW64 /c/xampp/htdocs/FirebaseServices (main)
+        $ firebase login
+        Anas@DESKTOP-1SMVT9O MINGW64 /c/xampp/htdocs/FirebaseServices (main)
+        $ firebase init
+        Anas@DESKTOP-1SMVT9O MINGW64 /c/xampp/htdocs/FirebaseServices (main)
+        $ firebase deploy
+
+        Example :
+        Anas@DESKTOP-1SMVT9O MINGW64 /c/xampp/htdocs/FirebaseServices (main)
+        $ firebase login
+        i  Firebase optionally collects CLI usage and error reporting information to help improve our products. Data is collected in accordance with Google's privacy policy (https://policies.google.com/privacy) and is not used to identify you.
+
+        ? Allow Firebase to collect CLI usage and error reporting information? Yes
+        i  To change your data collection preference at any time, run `firebase logout` and log in again.
+
+        Visit this URL on this device to log in:
+        https://accounts.google.com/o/oauth2/auth?client_id=************-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com&scope=email%20openid%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloudplatformprojects.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffirebase%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform&response_type=code&state=375975055&redirect_uri=http%3A%2F%2Flocalhost%3A9005
+
+        Waiting for authentication...
+
+        +  Success! Logged in as anasboukhlija0@gmail.com
+        Anas@DESKTOP-1SMVT9O MINGW64 /c/xampp/htdocs/FirebaseServices (main)
+        $ firebase init
+        
+             ######## #### ########  ######## ########     ###     ######  ########
+             ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+             ######    ##  ########  ######   ########  #########  ######  ######
+             ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+             ##       #### ##     ## ######## ########  ##     ##  ######  ########
+        
+        You're about to initialize a Firebase project in this directory:
+        
+          C:\xampp\htdocs\FirebaseServices
+        
+        Before we get started, keep in mind:
+        
+          * You are currently outside your home directory
+        
+        ? Are you ready to proceed? Yes
+        ? Which Firebase features do you want to set up for this directory? Press Space to select fe
+        atures, then Enter to confirm your choices. Hosting: Configure files for Firebase Hosting an
+        d (optionally) set up GitHub Action deploys
+        
+        === Project Setup
+        
+        First, let's associate this project directory with a Firebase project.
+        You can create multiple project aliases by running firebase use --add,
+        but for now we'll just set up a default project.
+        
+        ? Please select an option: Use an existing project
+        ? Select a default Firebase project for this directory: fir-services-4a701 (Firebase-service
+        s)
+        i  Using project fir-services-4a701 (Firebase-services)
+        
+        === Hosting Setup
+        
+        Your public directory is the folder (relative to your project directory) that
+        will contain Hosting assets to be uploaded with firebase deploy. If you
+        have a build process for your assets, use your build's output directory.
+        
+        ? What do you want to use as your public directory? /
+        ? Configure as a single-page app (rewrite all urls to /index.html)? Yes
+        ? Set up automatic builds and deploys with GitHub? No
+        ? File //index.html already exists. Overwrite? No
+        i  Skipping write of //index.html
+        
+        i  Writing configuration info to firebase.json...
+        i  Writing project information to .firebaserc...
+        +  hosting[fir-services-4a701]: release complete
+        
+        +  Deploy complete!
+        
+        Project Console: https://console.firebase.google.com/project/fir-services-4a701/overview    
+        Hosting URL: https://fir-services-4a701.web.app
+    </code></pre>
+                </div>
+                <!-- <div class="function">
+                    <h3 class="function-title"></h3>
+    <pre><code class="language-javascript">
+                       
+    </code></pre>
+                </div> -->
+            </div>
+            <a href="https://firebase.google.com/docs/firestore?hl=fr">For more information</a>
+
+        </div>
+    </div>
+    <script src="FireStore.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.24.1/prism.min.js"></script>
+</body>
+</html>

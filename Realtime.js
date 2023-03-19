@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-analytics.js";
-import { getDatabase, ref, set, onValue }  from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js';
+import { getDatabase, ref, set, onValue, remove }  from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBKFm3EYU3Hej9KniNnu4fxVBDdC0ve2u4",
@@ -12,7 +12,6 @@ const firebaseConfig = {
     appId: "1:948264685987:web:fbb515cf8f6d2c0fecca16",
     measurementId: "G-X3JNYYSVVJ"
 };
-
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -79,6 +78,7 @@ function displayNote(key,title,subtitle,text){
 async function getNotes (){
     const notesRef = ref(database, 'notes/');
     onValue(notesRef, (snapshot) => {
+        document.querySelector(".auth-body-side-2 .info").innerHTML = "";
         const data = snapshot.val();
         const result = Object.entries(data).map(([key, value]) => ({ id: key, ...value }));
         console.log(result);
@@ -105,14 +105,27 @@ document.querySelector("#enregistrer").addEventListener('click',async (e)=>{
 
 document.querySelector("#obtenir").addEventListener('click',async (e)=>{
     e.preventDefault();
-    const docId = document.querySelector("form #docId").value;
-    
+    const key = document.querySelector("form #docId").value;
+    if(key != ""){
+        document.querySelector(".auth-body-side-2 .info").innerHTML = "";
+        const noteRef = ref(database, `/notes/${key}`);
+        onValue(noteRef, (snapshot) => {
+            const data = snapshot.val();
+            console.log(data);
+            displayNote(key,data.user,data.date,data.note);
+        });
+    }
 });
 
 document.querySelector("#supprimer").addEventListener('click',async (e)=>{
     e.preventDefault();
-    const docId = document.querySelector("form #docId").value;
-    
+    const key = document.querySelector("form #docId").value;
+    const noteRef = ref(database, `/notes/${key}`);
+    remove(noteRef).then(()=>{
+        alert("note has Removed");
+    }).catch((error)=>{
+        alert(error)
+    });
 });
 
 
