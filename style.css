@@ -121,7 +121,7 @@ body{
 .hosting-item{
     margin: 5%;
 }
-.hosting-item a{
+.hosting-item a, .more-info{
     display: block;
     text-decoration: none;
     color: #000;
