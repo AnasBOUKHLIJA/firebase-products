@@ -5,68 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Firebase Service</title>
-    <link rel="icon" href="assets/firebaselogo.png" type="image/icon type">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="containerbody">
-        <div class="header ">
-            <h1>Quelques services fournis par firebase</h1>
+<div class="containerbody">
+    <div class="header ">
+        <h1>Quelques services fournis par firebase</h1>
+    </div>
+    <div class="row row-cols-2 p-2 d-flex justify-content-center">
+        <div class="col card m-2 p-0" style="width: 18rem;">
+            <img src="assets/connexion.png" class="card-img-top w-100" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Se connecter à un projet</h5>
+                <a href="Connetion.html" class="btn btn-primary w-75">Accéder</a>
+            </div>
         </div>
-        <div class="row row-cols-2 p-2 d-flex justify-content-center">
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/connexion.png" class="card-img-top w-100" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Se connecter à un projet</h5>
-                    <button class="btn btn-primary w-75" >Accéder</button>
-                </div>
+        <div class="col card m-2 p-0" style="width: 18rem;">
+            <img src="assets/authentification.png" class="card-img-top w-100" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Authentification</h5>
+                <a href="authentification.html" class="btn btn-primary w-75">Accéder</a>
             </div>
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/authentification.png" class="card-img-top w-100" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Authentification</h5>  <a href="Authentification.html"><button class="btn btn-primary w-75" >Accéder</button></a>
-
-                </div>
+        </div>
+        <div class="col card m-2 p-0" style="width: 18rem;">
+            <img src="assets/storage.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Storage</h5>
+                <a href="Storage.html" class="btn btn-primary w-75">Accéder</a>
             </div>
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/firestore.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Firestore</h5>
-                    <button class="btn btn-primary w-75">Accéder</button>
-                </div>
+        </div>
+        <div class="col card m-2 p-0" style="width: 18rem;">
+            <img src="assets/firestore.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Firestore</h5>
+                <a href="FireStore.html" class="btn btn-primary w-75">Accéder</a>
             </div>
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/reeltime.png" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Realtime database</h5>
-                    <button class="btn btn-primary w-75">Accéder</button>
-                </div>
+        </div>
+        <div class="col card m-2 p-0" style="width: 18rem;">
+            <img src="assets/reeltime.png" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Realtime database</h5>
+                <a href="Realtime.html" class="btn btn-primary w-75">Accéder</a>
             </div>
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/storage.png" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Storage</h5>
-                    <button class="btn btn-primary w-75">Accéder</button>
-                </div>
-            </div>
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/notifications.png" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Cloud Messaging</h5>
-                    <button class="btn btn-primary w-75">Accéder</button>
-                </div>
-            </div>
-            <div class="col card m-2 p-0" style="width: 18rem;">
-                <img src="assets/hosting.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <h5 class="card-title">Hosting</h5>
-                    <button class="btn btn-primary w-75">Accéder</button>
-                </div>
+        </div>
+        <div class="col card m-2 p-0" style="width: 18rem;">
+            <img src="assets/hosting.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">Hosting</h5>
+                <button class="btn btn-primary w-75">Accéder</button>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </body>
 </html>
